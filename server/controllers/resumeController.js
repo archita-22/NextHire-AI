@@ -1,5 +1,5 @@
 import cloudinary from "../config/cloudinary.js";
-import Resume from "../models/Resume.js";
+import Resume from "../models/resume.js"; // Fixed: lowercase 'r'
 import { PDFParse } from "pdf-parse";
 
 export const uploadResume = async (req, res) => {

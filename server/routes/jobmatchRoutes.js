@@ -3,7 +3,7 @@ import authMiddleware from "../middleware/authMiddleware.js";
 import {
   matchResumeWithJob,
   getUserJobMatches,
-} from "../controllers/jobMatchController.js";
+} from "../controllers/jobmatchController.js"; // Fixed: lowercase 'm'
 
 const router = express.Router();
 

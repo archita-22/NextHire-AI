@@ -1,5 +1,5 @@
-import Resume from "../models/Resume.js";
-import { analyzeResume } from "../services/aiService.js";
+import Resume from "../models/resume.js"; // Fixed: lowercase 'r'
+import { analyzeResume } from "../services/aiservice.js"; // Fixed: lowercase 's'
 
 export const analyzeResumeById = async (req, res) => {
   try {

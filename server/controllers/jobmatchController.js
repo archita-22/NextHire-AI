@@ -1,6 +1,6 @@
-import Resume from "../models/Resume.js";
-import JobMatch from "../models/JobMatch.js";
-import { compareResumeWithJob } from "../services/aiService.js";
+import Resume from "../models/resume.js"; // Fixed: lowercase 'r'
+import JobMatch from "../models/jobMatch.js"; // Fixed: lowercase 'j'
+import { compareResumeWithJob } from "../services/aiservice.js"; // Fixed: lowercase 's'
 
 export const matchResumeWithJob = async (req, res) => {
   try {

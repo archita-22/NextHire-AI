@@ -1,9 +1,9 @@
-import Resume from "../models/Resume.js";
-import InterviewSession from "../models/InterviewSession.js";
+import Resume from "../models/resume.js"; // Fixed: lowercase 'r'
+import InterviewSession from "../models/interviewSession.js"; // Fixed: lowercase 'i'
 import {
   generateInterviewQuestions,
   evaluateInterviewAnswers,
-} from "../services/aiService.js";
+} from "../services/aiservice.js"; // Fixed: lowercase 's'
 
 // ============ START INTERVIEW (generate questions) ============
 export const startInterview = async (req, res) => {
