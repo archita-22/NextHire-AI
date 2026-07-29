@@ -1,9 +1,8 @@
-
 import axios from "axios";
 
 const API = axios.create({
   // Added the required /api prefix to match your backend routes
-  baseURL: "https://nexthire-ai-4.onrender.com"
+  baseURL: "https://nexthire-ai-4.onrender.com/api"
 });
 
 // Automatically attaches the token to every request if the user is logged in
