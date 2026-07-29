@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useTheme } from "../context/ThemeContext";
+import { useTheme } from "../context/themeContext";
 import { useAuth } from "../context/AuthContext";
 import API from "../api/axios";
 import { Moon, Sun, User, Lock } from "lucide-react";

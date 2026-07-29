@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import API from "../api/axios";
-import { useTheme } from "../context/ThemeContext";
+import { useTheme } from "../context/themeContext";
 import { Mic, MicOff, Volume2, Send, RotateCcw } from "lucide-react";
 
 function InterviewPrep() {

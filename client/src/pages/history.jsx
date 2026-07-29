@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import API from "../api/axios";
-import { useTheme } from "../context/ThemeContext";
+import { useTheme } from "../context/themeContext";
 import { FileText, TrendingUp } from "lucide-react";
 
 function History() {
