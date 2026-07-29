@@ -1,15 +1,15 @@
 import { Routes, Route, Navigate } from "react-router-dom";
-import Signup from "./pages/Signup";
-import Login from "./pages/Login";
-import Dashboard from "./pages/Dashboard";
-import UploadResume from "./pages/UploadResume";
-import History from "./pages/History";
-import Settings from "./pages/Settings";
-import InterviewPrep from "./pages/InterviewPrep";
-import Layout from "./components/Layout";
-import ProtectedRoute from "./components/ProtectedRoute";
-import ForgotPassword from "./pages/ForgotPassword";
-import ResetPassword from "./pages/ResetPassword";
+import Signup from "./pages/signup";          
+import Login from "./pages/Login";           
+import Dashboard from "./pages/Dashboard";    
+import UploadResume from "./pages/uploadResume"; 
+import History from "./pages/history";        
+import Settings from "./pages/settings";      
+import InterviewPrep from "./pages/interviewprep"; // changed to lowercase i
+import Layout from "./components/layout";      // changed to lowercase l (matches file)
+import ProtectedRoute from "./components/protectedRoute"; // changed to lowercase p (matches file)
+import ForgotPassword from "./pages/Forgotpassword"; // changed to lowercase p
+import ResetPassword from "./pages/Resetpassword";   // changed to lowercase p
 
 function App() {
   return (
