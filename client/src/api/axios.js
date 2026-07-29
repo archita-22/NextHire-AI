@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "https://onrender.com"
+  baseURL: "https://nexthire-ai-4.onrender.com"
 });
 
 // Har request ke saath automatically token attach karega (agar login hai)
