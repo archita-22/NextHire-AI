@@ -1,15 +1,16 @@
 import { Navigate } from "react-router-dom";
-import { useAuth } from "../Context/AuthContext";
 
 function ProtectedRoute({ children }) {
-  const { user, loading } = useAuth();
+  // Read the session directly from localStorage to ensure immediate detection
+  const token = localStorage.getItem("token");
+  const storedUser = localStorage.getItem("user");
 
-  if (loading) return null; // ya koi loading spinner
-
-  if (!user) {
-    return <Navigate to="/login" />;
+  // If either the token or user object is missing, redirect to login
+  if (!token || !storedUser) {
+    return <Navigate to="/login" replace />;
   }
 
+  // Otherwise, safely allow access to the Dashboard pages
   return children;
 }
 
