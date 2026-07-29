@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
-import { useAuth } from "../context/AuthContext";
-import { useTheme } from "../context/themeContext";
+import { useAuth } from "../Context/AuthContext";
+import { useTheme } from "../Context/themeContext";
 import {
   LayoutDashboard,
   Upload,

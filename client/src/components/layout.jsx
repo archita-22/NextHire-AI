@@ -1,6 +1,6 @@
 import { Outlet, useNavigate, useLocation } from "react-router-dom";
-import Sidebar from "./Sidebar";
-import { useTheme } from "../context/themeContext";
+import Sidebar from "./sidebar";
+import { useTheme } from "../Context/themeContext";
 import { ArrowLeft } from "lucide-react";
 
 function Layout() {
