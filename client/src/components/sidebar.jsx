@@ -4,7 +4,6 @@ import { useTheme } from "../Context/themeContext";
 import {
   LayoutDashboard,
   Upload,
-  Briefcase,
   Mic,
   History,
   Settings,
@@ -28,31 +27,31 @@ function Sidebar() {
 
   return (
     <aside
-      className={`w-64 h-screen flex flex-col justify-between p-4 border-r ${
+      className={`w-64 h-screen sticky top-0 flex flex-col justify-between p-4 border-r select-none ${
         isDark
           ? "bg-[#1a0a14] border-white/10"
           : "bg-white border-pink-100"
       }`}
     >
-      <div>
-       <div
-  className={`flex items-center gap-2 mb-1 px-3 py-2 rounded-xl w-fit ${
-    isDark
-      ? "bg-white/10 backdrop-blur-xl border border-white/20"
-      : ""
-  }`}
->
-  <GraduationCap size={22} className="text-pink-500" />
-  <h2
-    className={`text-lg font-bold ${
-      isDark
-        ? "text-white drop-shadow-[0_0_15px_rgba(255,255,255,0.4)]"
-        : "text-gray-900"
-    }`}
-  >
-    Career Prep AI
-  </h2>
-</div>
+      <div className="flex flex-col gap-6">
+        <div
+          className={`flex items-center gap-2 mb-1 px-3 py-2 rounded-xl w-fit ${
+            isDark
+              ? "bg-white/10 backdrop-blur-xl border border-white/20"
+              : ""
+          }`}
+        >
+          <GraduationCap size={22} className="text-pink-500" />
+          <h2
+            className={`text-lg font-bold ${
+              isDark
+                ? "text-white drop-shadow-[0_0_15px_rgba(255,255,255,0.4)]"
+                : "text-gray-900"
+            }`}
+          >
+            Career Prep AI
+          </h2>
+        </div>
 
         <nav className="space-y-1">
           <NavLink to="/dashboard" end className={({ isActive }) => `${linkBase} ${isActive ? linkActive : linkInactive}`}>
@@ -78,9 +77,10 @@ function Sidebar() {
         </nav>
       </div>
 
+      {/* mt-auto explicitly pushes the logout button to the absolute footer constraint */}
       <button
         onClick={logout}
-        className={`${linkBase} ${
+        className={`${linkBase} mt-auto ${
           isDark
             ? "text-gray-400 hover:bg-red-500/10 hover:text-red-400"
             : "text-gray-500 hover:bg-red-50 hover:text-red-600"
