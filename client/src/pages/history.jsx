@@ -165,6 +165,20 @@ function History() {
                   </div>
                 </div>
               )}
+                {resume.analysis?.suggestions?.length > 0 && (
+                <div className="mt-4 pt-4 border-t border-white/10">
+                  <p className={`text-sm font-medium mb-2 ${isDark ? "text-gray-300" : "text-gray-700"}`}>
+                    Suggestions:
+                  </p>
+                  <ul className="list-disc list-inside space-y-1">
+                    {resume.analysis.suggestions.map((s, i) => (
+                      <li key={i} className={`text-sm ${isDark ? "text-gray-400" : "text-gray-600"}`}>
+                        {s}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
             </div>
           ))}
         </div>
