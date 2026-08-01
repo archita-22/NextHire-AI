@@ -14,6 +14,18 @@ import {
   User 
 } from "lucide-react";
 
+// **bold** ko detect karke actual <strong> mein render karta hai
+function renderWithBold(text) {
+  if (!text) return text;
+  const parts = text.split(/(\*\*.*?\*\*)/g);
+  return parts.map((part, i) => {
+    if (part.startsWith("**") && part.endsWith("**")) {
+      return <strong key={i}>{part.slice(2, -2)}</strong>;
+    }
+    return part;
+  });
+}
+
 function History() {
   const { theme } = useTheme();
   const isDark = theme === "dark";
