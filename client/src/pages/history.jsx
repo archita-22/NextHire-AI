@@ -15,17 +15,27 @@ import {
 } from "lucide-react";
 
 // **bold** ko detect karke actual <strong> mein render karta hai
-function renderWithBold(text) {
+// **bold** aur `code` dono ko properly render karta hai
+function renderFormatted(text) {
   if (!text) return text;
-  const parts = text.split(/(\*\*.*?\*\*)/g);
+  const parts = text.split(/(\*\*.*?\*\*|`.*?`)/g);
   return parts.map((part, i) => {
     if (part.startsWith("**") && part.endsWith("**")) {
       return <strong key={i}>{part.slice(2, -2)}</strong>;
     }
+    if (part.startsWith("`") && part.endsWith("`")) {
+      return (
+        <code
+          key={i}
+          className="bg-black/30 text-violet-300 px-1.5 py-0.5 rounded text-xs font-mono"
+        >
+          {part.slice(1, -1)}
+        </code>
+      );
+    }
     return part;
   });
 }
-
 function History() {
   const { theme } = useTheme();
   const isDark = theme === "dark";
