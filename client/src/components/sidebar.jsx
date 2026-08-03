@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useAuth } from "../Context/AuthContext";
 import { useTheme } from "../Context/themeContext";
 import {
@@ -14,7 +14,9 @@ import {
 function Sidebar() {
   const { logout } = useAuth();
   const { theme } = useTheme();
+  const navigate = useNavigate();
   const isDark = theme === "dark";
+
 
   const linkBase =
     "flex items-center gap-3 px-4 py-2.5 rounded-xl text-sm font-medium transition";
@@ -24,6 +26,10 @@ function Sidebar() {
   const linkInactive = isDark
     ? "text-gray-400 hover:bg-white/5 hover:text-white"
     : "text-gray-500 hover:bg-pink-50 hover:text-pink-700";
+  const handleLogout = () => {
+    logout();               // Context ka logout chalayein (taaki token remove ho)
+    navigate("/login");     // User ko turant login page par bhej dein
+  };
 
   return (
     <aside
@@ -79,7 +85,7 @@ function Sidebar() {
 
       {/* mt-auto explicitly pushes the logout button to the absolute footer constraint */}
       <button
-        onClick={logout}
+        onClick={handleLogout}
         className={`${linkBase} mt-auto ${
           isDark
             ? "text-gray-400 hover:bg-red-500/10 hover:text-red-400"
