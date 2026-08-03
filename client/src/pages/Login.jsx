@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import API from "../api/axios";
+import { useAuth } from "../Context/AuthContext"; // 1. Import your auth context hook
 
 function Login() {
   const navigate = useNavigate();
+  const { login } = useAuth(); // 2. Extract the login or user setter function from context
 
   const [formData, setFormData] = useState({
     email: "",
@@ -24,8 +26,17 @@ function Login() {
 
     try {
       const res = await API.post("/auth/login", formData);
+      
+      // 3. Save to browser storage
       localStorage.setItem("token", res.data.token);
       localStorage.setItem("user", JSON.stringify(res.data.user));
+      
+      // 4. Update AuthContext directly so the dashboard gets the user's name immediately
+      // Note: If your context uses "setUser" instead of a "login" function, change this line to: setUser(res.data.user);
+      if (login) {
+        login(res.data.user, res.data.token); 
+      }
+
       navigate("/dashboard");
     } catch (err) {
       setError(
